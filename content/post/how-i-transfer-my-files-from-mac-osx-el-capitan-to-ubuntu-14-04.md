@@ -1,9 +1,9 @@
 ---
 title: "How I Transfer My Files From Mac Osx El Capitan to Ubuntu 14 04"
 thumbnailImagePosition: top
-thumbnailImage: //res.cloudinary.com/dweyilbvh/image/upload/
-coverImage: //res.cloudinary.com/dweyilbvh/image/upload/
-coverCaption: This is caption
+thumbnailImage: https://pacs.ou.edu/filer/sharing/1495831525/1027/
+coverImage: https://networkencyclopedia.com/wp-content/uploads/2019/08/ftam-file-transfer-access-management.jpg
+coverCaption: https://networkencyclopedia.com/file-transfer-access-and-management-ftam
 metaAlignment: center
 coverMeta: out
 date: 2020-05-01T22:50:18+07:00
@@ -11,7 +11,8 @@ categories:
 - development
 tags:
 - tips
-description: ""
+- unix
+description: "Transfer files from Macbook to Ubuntu using Wifi"
 ---
 
 Today I want to transfer all of my data from my office’s MacBook Air (El-Capitan) to my laptop (Ubuntu 14.04). Since two of my external hard disk are broken, I need another way to transfer those files. And I come with transferring using the network (I have a wifi router at home).
