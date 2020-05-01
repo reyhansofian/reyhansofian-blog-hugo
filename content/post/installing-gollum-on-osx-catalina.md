@@ -11,7 +11,7 @@ description: "local .vimrc for different projects to make you more productive"
 metaalignment: center
 tags:
 - osx
-thumbnailimage: //res.cloudinary.com/dweyilbvh/image/upload/c_scale,w_750/v1499823190/vim8_owyvqx.png
+thumbnailimage: http://www.eggplante.com/wp-content/uploads/2019/03/gollum-750x400.jpg
 thumbnailimageposition: top
 ---
 
