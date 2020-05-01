@@ -8,7 +8,7 @@
 # For developpers, if you modify this theme, put your images in `source/images` folder and
 # use grunt task `build` to synchronize assets
 
-baseurl = "https://reyhan.tech/"
+baseurl = "https://reyhansofian.github.io/"
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
 title = "Everyday I Learn"
