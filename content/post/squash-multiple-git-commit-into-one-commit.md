@@ -6,7 +6,7 @@ metaAlignment: center
 coverMeta: out
 date: 2020-05-01T22:20:30+07:00
 categories:
-- tech
+- development
 tags:
 - git
 thumbnailImage: https://www.cmslive.co.uk/wp-content/uploads/2015/10/git-version-control.jpg

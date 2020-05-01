@@ -3,7 +3,7 @@ title: "Installing Gollum on OSX Catalina"
 date: 2020-05-01T16:32:22+07:00
 draft: false
 categories:
-- tech
+- development
 coverImage: https://www.wallpaperflare.com/static/674/874/537/guardians-of-middle-earth-gollum-the-lord-of-the-rings-smeagol-wallpaper.jpg
 coverCaption: https://www.wallpaperflare.com/static/674/874/537/guardians-of-middle-earth-gollum-the-lord-of-the-rings-smeagol-wallpaper.jpg
 coverMeta: out

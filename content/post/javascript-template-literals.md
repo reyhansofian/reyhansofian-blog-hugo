@@ -1,6 +1,6 @@
 ---
 categories:
-- tech
+- development
 coverImage: //res.cloudinary.com/dweyilbvh/image/upload/v1497584063/java-script_pqill1.jpg
 coverCaption: "http://ewanvalentine.io/content/images/2017/05/java-script.jpg"
 coverMeta: out
@@ -14,7 +14,7 @@ thumbnailImagePosition: top
 title: "Javascript's Template Literals"
 ---
 
-When I'm conducting a workshop for [Facebook Developer Circle Malang](https://www.facebook.com/groups/DevCMalang), one of our participants asking how [gql](https://github.com/apollographql/graphql-tag) works. I know it's called ___template literals___, but how did ___template literals___ can behave like a function (but without parentheses)? 
+When I'm conducting a workshop for [Facebook Developer Circle Malang](https://www.facebook.com/groups/DevCMalang), one of our participants asking how [gql](https://github.com/apollographql/graphql-tag) works. I know it's called ___template literals___, but how did ___template literals___ can behave like a function (but without parentheses)?
 <!--more-->
 
 Template literals is a new feature in ES6 or ES2015 (it's called "template strings" in prior editions of ES2015).
@@ -57,7 +57,7 @@ console.log(`1 + 5 equals ${a + b}`);
 
 # Tagged Template Literals
 
-As per what [MDN](https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Template_literals) said, 
+As per what [MDN](https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Template_literals) said,
 
 >Tagged template literals is an advanced form of template literals. Tags allow you to parse template literals with a function. The first argument of a tag function contains an array of string values. The remaining arguments are related to the expressions.
 

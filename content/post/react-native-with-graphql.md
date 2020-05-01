@@ -8,7 +8,7 @@ metaAlignment: center
 coverMeta: out
 date: 2017-05-31T09:26:13+07:00
 categories:
-- tech
+- development
 tags:
 - javascript
 - react-native
@@ -65,9 +65,9 @@ Second, in main entrypoint file (mine is `main.js`), import `ApolloClient`, `Apo
 ```js
 // main.js
 
-import { 
-    ApolloClient, 
-    ApolloProvider, 
+import {
+    ApolloClient,
+    ApolloProvider,
     createNetworkInterface,
 } from 'react-apollo';
 
@@ -141,7 +141,7 @@ Expo.registerRootComponent(AppContainer);
 
 ## GraphQL Query on Component
 
-If you're not familiar with GraphQL query, you might want to read [GraphQL Query documentation](http://graphql.org/learn/queries/) first. On this example, we just do a query to get a detail with an [argument](http://graphql.org/learn/queries/#arguments) and [variable](http://graphql.org/learn/queries/#variables) from Starwars API. 
+If you're not familiar with GraphQL query, you might want to read [GraphQL Query documentation](http://graphql.org/learn/queries/) first. On this example, we just do a query to get a detail with an [argument](http://graphql.org/learn/queries/#arguments) and [variable](http://graphql.org/learn/queries/#variables) from Starwars API.
 
 With GraphQL, we can specify which field(s) do we need just like `SELECT` in SQL query. We just need `title`, `openingCrawl`, `director`, `producers`, and `releaseDate` fields for this example. With GraphQL, we can query like this
 
@@ -191,9 +191,9 @@ query($id: ID!) {
 }
 ```
 
-If you're looking at the `query` statement, it has `$id` and `ID!` on its parameter (just like a normal function pattern). Basically, GraphQL has a [type system](http://graphql.org/learn/schema/#type-system) which mean that we need to specify the type for each of its paramater. 
+If you're looking at the `query` statement, it has `$id` and `ID!` on its parameter (just like a normal function pattern). Basically, GraphQL has a [type system](http://graphql.org/learn/schema/#type-system) which mean that we need to specify the type for each of its paramater.
 
-So, we can say that `query` statement has a parameter called `$id` which has type of `ID` ([GraphQL built-in type](http://graphql.org/learn/schema/#scalar-types)). And the exclamation mark (`ID!`) means that the field is non-nullable or required. 
+So, we can say that `query` statement has a parameter called `$id` which has type of `ID` ([GraphQL built-in type](http://graphql.org/learn/schema/#scalar-types)). And the exclamation mark (`ID!`) means that the field is non-nullable or required.
 
 And if you're looking at the `film` object, it also has a parameter called `id`. We can passing the arguments from `query` statement to the `film` object (just like normal function) just like the code above.
 

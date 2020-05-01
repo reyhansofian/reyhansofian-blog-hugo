@@ -1,6 +1,6 @@
 ---
 categories:
-- tech
+- development
 coverImage: //res.cloudinary.com/dweyilbvh/image/upload/v1499823190/vim8_owyvqx.png
 coverMeta: out
 date: 2017-07-12T08:25:31+07:00
@@ -21,7 +21,7 @@ In my case, I have different ESLint rules across my Javascript projects and some
 First, let's put this code at the end of your global `.vimrc`
 
 ```sh
-if filereadable(glob("~/.vimrc.local")) 
+if filereadable(glob("~/.vimrc.local"))
     source ~/.vimrc.local
 endif
 ```
