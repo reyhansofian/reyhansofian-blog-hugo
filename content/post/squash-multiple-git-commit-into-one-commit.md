@@ -4,7 +4,7 @@ coverImage: https://www.hostinger.co.id/tutorial/wp-content/uploads/sites/11/201
 coverCaption: https://www.hostinger.co.id/tutorial/cara-menggunakan-github-perintah-dasar-github
 metaAlignment: center
 coverMeta: out
-date: 2020-05-01T22:20:30+07:00
+date: 2018-04-18T22:20:30+07:00
 categories:
 - development
 tags:

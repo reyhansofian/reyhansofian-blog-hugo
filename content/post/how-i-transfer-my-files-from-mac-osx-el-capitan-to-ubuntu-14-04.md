@@ -6,7 +6,7 @@ coverImage: https://networkencyclopedia.com/wp-content/uploads/2019/08/ftam-file
 coverCaption: https://networkencyclopedia.com/file-transfer-access-and-management-ftam
 metaAlignment: center
 coverMeta: out
-date: 2020-05-01T22:50:18+07:00
+date: 2016-08-24T22:50:18+07:00
 categories:
 - development
 tags:

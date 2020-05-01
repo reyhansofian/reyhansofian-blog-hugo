@@ -1,6 +1,6 @@
 ---
 title: "Installing Gollum on OSX Catalina"
-date: 2020-05-01T16:32:22+07:00
+date: 2020-01-23T16:32:22+07:00
 draft: false
 categories:
 - development
