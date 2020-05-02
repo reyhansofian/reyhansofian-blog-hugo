@@ -27,3 +27,4 @@ git push origin master
 cd ..
 
 git commit -am "$msg"
+git push origin master
