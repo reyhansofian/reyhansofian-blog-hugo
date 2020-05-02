@@ -13,6 +13,21 @@
     {{ end }}
     <ul class="sidebar-buttons">
       {{ partial "menu.html" (dict "menu" .Site.Menus.main "root" $) }}
+      <li class="sidebar-button">
+      {{ range .Site.Languages }}
+        {{ $lang := .Lang }}
+        {{ $flag := ""}}
+        {{ if eq $lang "id" }}
+        {{ $flag = "id" }}
+        {{ else if eq $lang "en" }}
+        {{ $flag = "gb" }}
+        {{ end }}
+        <a class="sidebar-button-link" href="{{ $.Site.BaseURL }}/{{ $lang }}">
+          <i class="sidebar-button-icon flag-icon flag-icon-{{ $flag }}"></i>
+          <span class="sidebar-button-desc">{{ upper $lang }}</span>
+        </a>
+      {{ end }}
+      </li>
     </ul>
     <ul class="sidebar-buttons">
       {{ partial "menu.html" (dict "menu" .Site.Menus.links "root" $) }}

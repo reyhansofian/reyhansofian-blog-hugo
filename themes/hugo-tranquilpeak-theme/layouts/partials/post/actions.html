@@ -78,6 +78,21 @@
           <i class="fa fa-list"></i>
         </a>
       </li>
+      {{ if .IsTranslated }}
+        {{ range .Translations }}
+          {{ $flag := ""}}
+          {{ if eq .Lang "id" }}
+          {{ $flag = "id" }}
+          {{ else if eq .Lang "en" }}
+          {{ $flag = "gb" }}
+          {{ end }}
+          <li class="post-action">
+            <a class="post-action-btn btn btn--default" href="{{ .RelPermalink }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
+              <i class="flag-icon flag-icon-{{ $flag }}"></i> Translated to {{ upper .Lang }}
+            </a>
+          </li>
+        {{ end }}
+      {{ end }}
     </ul>
   {{ end }}
 </div>
