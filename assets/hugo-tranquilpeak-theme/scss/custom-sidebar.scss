@@ -3,6 +3,7 @@ nav#sidebar {
         text-align: center;
         position: fixed;
         bottom: 0;
+        width: #{map-get($sidebar, xlg-screen-width)};
 
         ul.sidebar-buttons {
             padding-left: 0;
