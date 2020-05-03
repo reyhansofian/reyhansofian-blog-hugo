@@ -1,0 +1,17 @@
+nav#sidebar {
+    .sidebar-lang {
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+
+        ul.sidebar-buttons {
+            padding-left: 0;
+            width: 100%;
+
+            li.sidebar-button {
+                width: auto;
+                display: inline-block;
+            }
+        }
+    }
+}

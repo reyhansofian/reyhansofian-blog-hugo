@@ -19,6 +19,7 @@ googleAnalytics = "UA-99138527-1"
 paginate = 10
 canonifyurls = true
 metaDataFormat = "yaml"
+assetDir = "assets/hugo-tranquilpeak-theme"
 
 [languages]
   [languages.en]
@@ -76,7 +77,7 @@ metaDataFormat = "yaml"
   # dateFormat = "2 January 2006"
 
   # Global keywords configuration. Following keywords will be add to every pages
-  keywords = ["development", "tips", "articles"]
+  keywords = ["tech", "development", "tips", "articles"]
 
   # Syntax highlighter, possible choice between: "highlight.js" (recommanded) and "prism.js" (experimental)
   # You can comment it to disable syntax highlighting
