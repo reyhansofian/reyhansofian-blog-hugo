@@ -7,7 +7,7 @@ categories:
 coverImage: https://www.wallpaperflare.com/static/674/874/537/guardians-of-middle-earth-gollum-the-lord-of-the-rings-smeagol-wallpaper.jpg
 coverCaption: https://www.wallpaperflare.com/static/674/874/537/guardians-of-middle-earth-gollum-the-lord-of-the-rings-smeagol-wallpaper.jpg
 coverMeta: out
-description: "local .vimrc for different projects to make you more productive"
+description: "How to solve Ruby Gem Gollum installation on OSX Catalina"
 metaalignment: center
 tags:
 - osx
