@@ -115,6 +115,9 @@
 - id: "post.comment_and_share"
   translation: "Komen dan Bagikan"
 
+- id : "post.translation"
+  translation: "Versi EN"
+
 ## FOOTER ##
 - id: "footer.all_rights_reserved"
   translation: "All Rights Reserved"

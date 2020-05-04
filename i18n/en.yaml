@@ -115,6 +115,9 @@
 - id: "post.comment_and_share"
   translation: "Comment and share"
 
+- id : "post.translation"
+  translation: "ID Version"
+
 ## FOOTER ##
 - id: "footer.all_rights_reserved"
   translation: "All Rights Reserved"

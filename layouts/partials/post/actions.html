@@ -88,7 +88,7 @@
           {{ end }}
           <li class="post-action">
             <a class="post-action-btn btn btn--default" href="{{ .RelPermalink }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
-              <i class="flag-icon flag-icon-{{ $flag }}"></i> Translated to {{ upper .Lang }}
+              <i class="flag-icon flag-icon-{{ $flag }}"></i> {{ i18n "post.translation" }}
             </a>
           </li>
         {{ end }}
