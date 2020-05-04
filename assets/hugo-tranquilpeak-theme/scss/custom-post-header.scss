@@ -1,0 +1,15 @@
+.post-header-edit-on-github {
+    text-align: right;
+    margin-bottom: 30px;
+
+    & > .btn {
+        color: #4a4a4a !important;
+        border-color: #4a4a4a !important;
+        font-size: 12px;
+        padding: 5px 10px;
+
+        &:hover {
+            color: $font-color-base;
+        }
+    }
+}

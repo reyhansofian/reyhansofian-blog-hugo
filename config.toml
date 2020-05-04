@@ -148,6 +148,16 @@ assetDir = "assets/hugo-tranquilpeak-theme"
   # they have to be referred from static root. Example
   # customJS = ["js/foo.js"]
 
+  [[params.sharingOptions]]
+    name = "Facebook"
+    icon = "fa-facebook-official"
+    url = "https://www.facebook.com/sharer/sharer.php?u=%s"
+
+  [[params.sharingOptions]]
+    name = "Twitter"
+    icon = "fa-twitter"
+    url = "https://twitter.com/intent/tweet?text=%s"
+
   [params.header.rightLink]
     class = ""
     icon = ""
