@@ -26,5 +26,6 @@ git push origin master
 
 cd ..
 
+printf "\033[0;32mCommiting new update to upstream...\033[0m\n"
 git commit -am "$msg"
 git push origin master
