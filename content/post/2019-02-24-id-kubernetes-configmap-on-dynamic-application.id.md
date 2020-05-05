@@ -17,8 +17,6 @@ description: "Kubernetes memiliki fitur yang bernama ConfigMap yang biasa diguna
 Kubernetes memiliki fitur yang bernama ConfigMap yang biasa digunakan untuk menyimpan konfigurasi suatu aplikasi. Di artikel ini kita akan membahas tentang ConfigMap dan kita bisa pakai ConfigMap untuk apa saja.
 <!--more-->
 
-<!-- toc -->
-
 # Apa Itu ConfigMap?
 
 > ConfigMap allows you to decouple configuration artifacts from image content to keep containerized applications portable.
