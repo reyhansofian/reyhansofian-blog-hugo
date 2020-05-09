@@ -6,15 +6,16 @@ metaAlignment: center
 coverMeta: out
 date: 2018-04-18T22:20:30+07:00
 categories:
-- development
+  - programming
 tags:
-- git
+  - git
 thumbnailImage: https://www.cmslive.co.uk/wp-content/uploads/2015/10/git-version-control.jpg
 thumbnailimageposition: top
 description: "Squash multiple git commit as one commit for more readable commit"
 ---
 
 Git is a powerful versioning tool. Most tech companies use Git as their versioning tools (some big companies still using Mercurial and SVN though). It’s also applied to my current company.
+
 <!--more-->
 
 I have a habit to commit on a small chunk and treat it as a “checkpoint”. So whenever I need to revert, it’s easy to do that. Sometimes I want to merge previous commits into a single, just want to make it more compact before pushing it into a remote branch. With Git, this is quite easy to do by using the rebase command.

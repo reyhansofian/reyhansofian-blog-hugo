@@ -8,7 +8,7 @@ metaAlignment: center
 coverMeta: out
 date: {{ .Date }}
 categories:
-- development
+- programming
 tags: []
 description: ""
 draft: true

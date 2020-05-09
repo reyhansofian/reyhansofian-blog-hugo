@@ -8,23 +8,24 @@ metaAlignment: center
 coverMeta: out
 date: 2017-01-11T23:33:37+07:00
 categories:
-- development
+  - programming
 tags:
-- webstrom
-- tips
+  - webstrom
+  - tips
 description: "Memperbaiki masalah autofix ESLint yang tidak berjalan dengan menggunakan File Watcher di Webstrom 2016."
 ---
 
 Saya dan tim sedang mengerjakan aplikasi Javascript dengan menggunakan NodeJS dan ReactJS. Kami menggunakan ESLint sebagai standart untuk kode kami dengan menggunakan konfigurasi ESLint dari AirBnB. Hingga saat ini kami cukup puas dengan konfigurasi ini.
+
 <!--more-->
 
-Saya pribadi menggunakan Webstrom 2016 untuk kegiatan koding sehari-hari. Meskipun Webstrom 2016 cukup powerful, tapi ini tidak seperti di VSCode ataupun Atom dimana kita bisa memperbaiki kode kita secara otomatis dengan menggunakan *plugin* ESLint pada saat setiap kali kita menyimpan. Setelah Googling sana-sini, ternyata fitur perbaikan kode secara otomatis di Webstrom 2016 masih belum ada dan masih menjadi permintaan dari pengguna lainnya berdasarkan jawaban dari pertanyaan di [Stackoverflow](http://stackoverflow.com/a/29231841/2763662).
+Saya pribadi menggunakan Webstrom 2016 untuk kegiatan koding sehari-hari. Meskipun Webstrom 2016 cukup powerful, tapi ini tidak seperti di VSCode ataupun Atom dimana kita bisa memperbaiki kode kita secara otomatis dengan menggunakan _plugin_ ESLint pada saat setiap kali kita menyimpan. Setelah Googling sana-sini, ternyata fitur perbaikan kode secara otomatis di Webstrom 2016 masih belum ada dan masih menjadi permintaan dari pengguna lainnya berdasarkan jawaban dari pertanyaan di [Stackoverflow](http://stackoverflow.com/a/29231841/2763662).
 
-Ternyata, Webstrom (ataupun produk JetBrains lainnya) menyediakan *plugin* yang bernama **File Watcher**. *Plugin* ini dapat **"melihat"** (***watch***) perubahan pada kode kita dan akan melakukan suatu task tertentu jika terjadi perubahan. Informasi lebih lanjut, dapat membaca [referensi berikut](https://www.jetbrains.com/help/webstorm/2016.3/file-watchers.html).
+Ternyata, Webstrom (ataupun produk JetBrains lainnya) menyediakan _plugin_ yang bernama **File Watcher**. _Plugin_ ini dapat **"melihat"** (**_watch_**) perubahan pada kode kita dan akan melakukan suatu task tertentu jika terjadi perubahan. Informasi lebih lanjut, dapat membaca [referensi berikut](https://www.jetbrains.com/help/webstorm/2016.3/file-watchers.html).
 
-Akhirnya saya mencoba menggunakan *plugin* **File Watcher** tersebut supaya secara otomatis dapat memperbaiki kode kita yang ditandai memiliki masalah oleh ESLint. Jadi tidak perlu repot-repot memperbaiki kode yang berantakan. Berikut caranya untuk menggunakan File Watcher:
+Akhirnya saya mencoba menggunakan _plugin_ **File Watcher** tersebut supaya secara otomatis dapat memperbaiki kode kita yang ditandai memiliki masalah oleh ESLint. Jadi tidak perlu repot-repot memperbaiki kode yang berantakan. Berikut caranya untuk menggunakan File Watcher:
 
-1. Install *plugin* File Watcher. Kalian dapat menemukannya di menu **Preferences** > **Plugins** > **Search for “File Watchers"**. Centang pilihannya dan klik tombol **Apply**. Setelah itu kalian perlu restart Webstrom.
+1. Install _plugin_ File Watcher. Kalian dapat menemukannya di menu **Preferences** > **Plugins** > **Search for “File Watchers"**. Centang pilihannya dan klik tombol **Apply**. Setelah itu kalian perlu restart Webstrom.
 
 {{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*-LJSlJ4NHxX2bpBoG5vF_g.png" title="Preferences > Plugins > Search for \"File Watchers\"" >}}
 
@@ -52,7 +53,7 @@ Jika kalian install ESLint secara global (dengan/atau menggukan NVM), kalian dap
 
 {{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*9kmjeSMC4leS8VkrYx65PQ.png" >}}
 
-> ***Referensi:*** \
+> **_Referensi:_** \
 > https://stackoverflow.com/questions/29221136/lint-only-on-save-intellij-webstorm \
 > https://stackoverflow.com/questions/38883634/how-can-i-run-ESLint-fix-on-my-javascript-in-intellij-idea-webstorm-other-je \
 > https://www.jetbrains.com/help/webstorm/2016.3/file-watchers.html

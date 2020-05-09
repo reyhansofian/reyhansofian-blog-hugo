@@ -3,20 +3,21 @@ title: "React Native with GraphQL"
 thumbnailImagePosition: top
 thumbnailImage: //res.cloudinary.com/dweyilbvh/image/upload/v1496287727/react-apollo_tazzsm.png
 coverImage: //res.cloudinary.com/dweyilbvh/image/upload/v1496287727/react-apollo_tazzsm.png
-coverCaption : "https://cdn1.sysgears.com/images/blog/banners/apollo!-react-graphql-457c041c1c34868d9076f2433d761fad.png"
+coverCaption: "https://cdn1.sysgears.com/images/blog/banners/apollo!-react-graphql-457c041c1c34868d9076f2433d761fad.png"
 metaAlignment: center
 coverMeta: out
 date: 2017-05-31T09:26:13+07:00
 categories:
-- development
+  - programming
 tags:
-- javascript
-- react-native
-- react
+  - javascript
+  - react-native
+  - react
 description: "React Native apps with Expo.io and GraphQL (React-Apollo). Less pain, less code."
 ---
 
 > TL;DR; React Native apps with Expo.io and GraphQL (React-Apollo). Less pain, less code.
+
 <!--more-->
 
 Here at [Facebook Developer Circle Malang](https://www.facebook.com/groups/DevCMalang), we held React Native workshop using [Expo.io](https://expo.io/) and [Lumen](https://lumen.laravel.com/). Everyone (including me) are encouraged to create a mobile apps using React Native. And then I had an idea using some kind of RESTful API like [swapi.co](http://swapi.co) or [pokeapi.co](http://pokeapi.co) but with GraphQL. After hours of researching, I decided to use [Starwars GraphQL server](http://graphql.org/swapi-graphql/) from [GraphQL.org](http://graphql.org/).
@@ -36,23 +37,23 @@ First, define your route and add it to React Navigation's `StackNavigator`. Exam
 ```js
 // main.js
 
-import { StackNavigator } from 'react-navigation';
+import { StackNavigator } from "react-navigation";
 
-import App from './src/App';
-import Film from './src/Film';
-import FilmDetail from './src/Film/FilmDetail';
+import App from "./src/App";
+import Film from "./src/Film";
+import FilmDetail from "./src/Film/FilmDetail";
 
 const routes = {
   Home: {
-    name: 'Home',
+    name: "Home",
     screen: App,
   },
   Film: {
-    name: 'Film',
+    name: "Film",
     screen: Film,
   },
   FilmDetail: {
-    name: 'FilmDetail',
+    name: "FilmDetail",
     screen: FilmDetail,
   },
 };
@@ -66,14 +67,14 @@ Second, in main entrypoint file (mine is `main.js`), import `ApolloClient`, `Apo
 // main.js
 
 import {
-    ApolloClient,
-    ApolloProvider,
-    createNetworkInterface,
-} from 'react-apollo';
+  ApolloClient,
+  ApolloProvider,
+  createNetworkInterface,
+} from "react-apollo";
 
 const client = new ApolloClient({
   networkInterface: createNetworkInterface({
-    uri: 'GRAPHQL_SERVER_ENDPOINT',
+    uri: "GRAPHQL_SERVER_ENDPOINT",
   }),
 });
 ```
@@ -101,25 +102,25 @@ So the full code for the main entrypoint looks like this:
 ```js
 // main.js
 
-import Expo from 'expo';
-import React from 'react';
-import { StackNavigator } from 'react-navigation';
+import Expo from "expo";
+import React from "react";
+import { StackNavigator } from "react-navigation";
 
-import App from './src/App';
-import Film from './src/Film';
-import FilmDetail from './src/Film/FilmDetail';
+import App from "./src/App";
+import Film from "./src/Film";
+import FilmDetail from "./src/Film/FilmDetail";
 
 const routes = {
   Home: {
-    name: 'Home',
+    name: "Home",
     screen: App,
   },
   Film: {
-    name: 'Film',
+    name: "Film",
     screen: Film,
   },
   FilmDetail: {
-    name: 'FilmDetail',
+    name: "FilmDetail",
     screen: FilmDetail,
   },
 };
@@ -199,7 +200,7 @@ And if you're looking at the `film` object, it also has a parameter called `id`.
 
 OK, so how do we get the `$id`? React-Apollo comes with a handy way how to get the variable(s). Please refer to this [page](http://dev.apollodata.com/react/api-queries.html#graphql-config-options-variables). Basically, React-Apollo is just a High Order Component for React. The `graphql` container has a pattern like this
 
-># graphql(query, [config])(component)
+> # graphql(query, [config])(component)
 
 As you can see, the first parameter of the container is the query and the second is the config. We can get the `$id` from the config. **Note: since React Native support `decorators` syntax, I will use it.**
 
@@ -225,17 +226,14 @@ As you can see, the first parameter of the container is the query and the second
 
 You'll notice that we specify the variables called `id` on the `options` section. It will get injected into the query and will be read by grapqhl query as `$id` on runtime. The code will looks like this
 
-
 ```js
 // FilmDetail.js
-import React, { Component, PropTypes } from 'react';
-import { gql, graphql } from 'react-apollo';
-import {
-  Text,
-  View,
-} from 'react-native';
+import React, { Component, PropTypes } from "react";
+import { gql, graphql } from "react-apollo";
+import { Text, View } from "react-native";
 
-@graphql(gql`
+@graphql(
+  gql`
     query($id: ID!) {
       film(id: $id) {
         title
@@ -245,13 +243,15 @@ import {
         releaseDate
       }
     }
-`, {
-  options: (props) => ({
-    variables: {
-      id: props.navigation.state.params.id,
-    },
-  }),
-})
+  `,
+  {
+    options: (props) => ({
+      variables: {
+        id: props.navigation.state.params.id,
+      },
+    }),
+  }
+)
 class FilmDetail extends Component {
   static navigationOptions = ({ navigation }) => ({
     title: navigation.state.params.title,
@@ -264,13 +264,16 @@ class FilmDetail extends Component {
       <View style={styles.container}>
         <Text style={styles.title}>{film.title}</Text>
         <View style={styles.rowContainer}>
-          <Text style={styles.bold}>Released Date:</Text><Text> {moment(film.releaseDate).format('DD MMMM Y')}</Text>
+          <Text style={styles.bold}>Released Date:</Text>
+          <Text> {moment(film.releaseDate).format("DD MMMM Y")}</Text>
         </View>
         <View style={styles.rowContainer}>
-          <Text style={styles.bold}>Director:</Text><Text> {film.director}</Text>
+          <Text style={styles.bold}>Director:</Text>
+          <Text> {film.director}</Text>
         </View>
         <View style={styles.rowContainer}>
-          <Text style={styles.bold}>Producers:</Text><Text> {film.producers.join(', ')}</Text>
+          <Text style={styles.bold}>Producers:</Text>
+          <Text> {film.producers.join(", ")}</Text>
         </View>
         <View style={styles.openingCrawlContainer}>
           <Text style={styles.openingCrawlText}>{film.openingCrawl}</Text>

@@ -8,14 +8,15 @@ metaAlignment: center
 coverMeta: out
 date: 2017-01-11T23:33:37+07:00
 categories:
-- development
+  - programming
 tags:
-- webstrom
-- tips
+  - webstrom
+  - tips
 description: "Autofix ESLint issue on NodeJS applications using Webstrom's File Watcher"
 ---
 
 Currently, I and my team are working on a Javascript application using NodeJS and ReactJS. We use ESLint to use a coding standard with AirBnB config. We’re satisfied with it so far.
+
 <!--more-->
 
 I’m using Webstorm 2016 for code. Great features. But something is missing on it. On Visual Studio Code and Atom, we can fix the ESLint issue on save. But not it Webstorm 2016. It’s still a requested feature based on this [Stackoverflow answer](http://stackoverflow.com/a/29231841/2763662).
@@ -50,7 +51,7 @@ If you install ESLint globally (and/or use nvm), you can check ESLint path by ex
 
 {{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*9kmjeSMC4leS8VkrYx65PQ.png" >}}
 
-> ***References:*** \
+> **_References:_** \
 > https://stackoverflow.com/questions/29221136/lint-only-on-save-intellij-webstorm \
 > https://stackoverflow.com/questions/38883634/how-can-i-run-ESLint-fix-on-my-javascript-in-intellij-idea-webstorm-other-je \
 > https://www.jetbrains.com/help/webstorm/2016.3/file-watchers.html

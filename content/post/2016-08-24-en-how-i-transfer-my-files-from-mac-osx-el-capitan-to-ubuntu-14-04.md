@@ -8,14 +8,15 @@ metaAlignment: center
 coverMeta: out
 date: 2016-08-24T22:50:18+07:00
 categories:
-- development
+  - technology
 tags:
-- tips
-- unix
+  - tips
+  - unix
 description: "Migrating your files from Macbook to Ubuntu using Wifi"
 ---
 
 Today I want to transfer all of my data from my office’s MacBook Air (El-Capitan) to my laptop (Ubuntu 14.04). Since two of my external hard disk are broken, I need another way to transfer those files. And I come with transferring using the network (I have a wifi router at home).
+
 <!--more-->
 
 So this is how I set it up:
@@ -85,8 +86,9 @@ If you’re using a wifi network, you should find `wlan0` section and make a not
 > sudo mkdir -p /media/hdd/backup
 > sudo chown nobody:nogroup /media/hdd/backup
 ```
+
 - Now we need to set our Samba configuration which located in “/etc/samba/smb.conf”. Run “sudo vim /etc/samba/smb.conf” to edit Samba config file.
-Add these codes at the bottom of the config file:
+  Add these codes at the bottom of the config file:
 
 ```shell
 [Ubuntu 14.04] # This is the network's name that will show up on the network
@@ -150,7 +152,7 @@ samba-ad-dc start/running, process 22207
 > sudo rsync -vaE --progress --exclude='/dirs/you/dont/need' /Users/username/your/folder/to/copy/from /Volumes/Ubuntu\ 14.04
 ```
 
->The flags are: \
+> The flags are: \
 > **v:** increases verbosity. \
 > **a:** applies archive settings to mirror the source files exactly, including symbolic links and permissions. \
 > **E:** copies extended attributes and resource forks (OS X only). \

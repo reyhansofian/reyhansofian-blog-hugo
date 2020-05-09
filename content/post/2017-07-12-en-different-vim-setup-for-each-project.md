@@ -1,19 +1,20 @@
 ---
 categories:
-- development
+  - programming
 coverImage: //res.cloudinary.com/dweyilbvh/image/upload/v1499823190/vim8_owyvqx.png
 coverMeta: out
 date: 2017-07-12T08:25:31+07:00
 description: "Local .vimrc for different projects to make you more productive"
 metaAlignment: center
 tags:
-- vim
+  - vim
 thumbnailImage: //res.cloudinary.com/dweyilbvh/image/upload/c_scale,w_750/v1499823190/vim8_owyvqx.png
 thumbnailImagePosition: top
 title: Different Vim Settings for Each Project
 ---
 
 Sometimes, we need to have a different Vim settings across projects. We can achieve it by kept specific settings for each projects in a `.vimrc.local`.
+
 <!--more-->
 
 In my case, I have different ESLint rules across my Javascript projects and some of them have autofix code on each save. By using this approach, I can differentiate the settings in `.vimrc.local` and place it on the root of each projects.
