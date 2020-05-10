@@ -120,29 +120,28 @@ const configMapFile = "..data";
 
 // watching file
 fs.watch(`${mountPath}`, (event, filename) => {
-// only listen to event "rename".
-// kubelet will rename the reference folder on ConfigMap update.
-if (event === "rename" && filename) {
-if (filename === configMapFile) {
-console.log(`process.env BEFORE: ${JSON.stringify(process.env)}`);
+  // only listen to event "rename".
+  // kubelet will rename the reference folder on ConfigMap update.
+  if (event === "rename" && filename) {
+  if (filename === configMapFile) {
+  console.log(`process.env BEFORE: ${JSON.stringify(process.env)}`);
 
-    // get all files from `..data` directory
-    const dir = fs.readdirSync(`${mountPath}/${configMapFile}`);
+      // get all files from `..data` directory
+      const dir = fs.readdirSync(`${mountPath}/${configMapFile}`);
 
-    console.log(`Env list: ${dir}`);
+      console.log(`Env list: ${dir}`);
 
-    // read all files inside `..data` directory
-    dir.forEach(env => {
-        // inject the new envar value to `process.env` object (not recommended)
-        process.env[env] = fs.readFileSync(
-        `${mountPath}/${configMapFile}/${env}`
-        );
-    });
+      // read all files inside `..data` directory
+      dir.forEach(env => {
+          // inject the new envar value to `process.env` object (not recommended)
+          process.env[env] = fs.readFileSync(
+          `${mountPath}/${configMapFile}/${env}`
+          );
+      });
 
-    console.log(`process.env AFTER: ${JSON.stringify(process.env)}`);
-    }
-
-}
+      console.log(`process.env AFTER: ${JSON.stringify(process.env)}`);
+      }
+  }
 });
 
 // for readinessProbe and livelinessProbe Kubernetes
@@ -178,84 +177,89 @@ Kode di atas akan melihat dan melakukan perubahan jika terjadi event **_"rename"
 apiVersion: v1
 kind: Service
 metadata:
-labels:
-test-app: test
-name: test
-namespace: default
+  labels:
+    test-app: test
+  name: test
+  namespace: default
 spec:
-externalTrafficPolicy: Cluster
-ports:
-
-- nodePort: 30321
-  port: 3000
-  protocol: TCP
-  targetPort: 3000
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30321
+    port: 3000
+    protocol: TCP
+    targetPort: 3000
   selector:
-  test-app: test
+    test-app: test
   sessionAffinity: None
   type: NodePort
-  status:
+status:
   loadBalancer: {}
-
 ---
-
 apiVersion: extensions/v1
 kind: Deployment
 metadata:
-name: test
+  name: test
 spec:
-revisionHistoryLimit: 2
-strategy:
-type: RollingUpdate
-replicas: 1
-selector:
-matchLabels:
-test-app: test
-template:
-metadata:
-labels:
-test-app: test
-spec:
-volumes: - name: config-volume
-configMap:
-name: test-config
-containers: - name: test
-image: reyhan/docker-try-config:1.0.0
-command: ["npm", "start"]
-imagePullPolicy: Never
-livenessProbe:
-httpGet:
-path: /info
-port: 3000
-initialDelaySeconds: 90
-periodSeconds: 5
-readinessProbe:
-httpGet:
-path: /info
-port: 3000
-initialDelaySeconds: 5
-periodSeconds: 5
-ports: - containerPort: 3000
-volumeMounts: - name: config-volume
-mountPath: /etc/config
-resources:
-requests:
-memory: "256Mi"
-cpu: "64m"
-limits:
-memory: "512Mi"
-cpu: "256m"
-env: - name: ENV_SQL_CLIENT
-value: "mysql" - name: ENV_SQL_HOST
-value: "13.67.44.182" - name: ENV_IS_MAINTENANCE
-valueFrom:
-configMapKeyRef:
-name: test-config
-key: ENV_IS_MAINTENANCE - name: ENV_IS_BLOWN_UP
-valueFrom:
-configMapKeyRef:
-name: test-config
-key: ENV_IS_BLOWN_UP
+  revisionHistoryLimit: 2
+  strategy:
+    type: RollingUpdate
+  replicas: 1
+  selector:
+    matchLabels:
+      test-app: test
+  template:
+    metadata:
+      labels:
+        test-app: test
+    spec:
+      volumes:
+        - name: config-volume
+          configMap:
+            name: test-config
+      containers:
+        - name: test
+          image: reyhan/docker-try-config:1.0.0
+          command: ["npm", "start"]
+          imagePullPolicy: Never
+          livenessProbe:
+            httpGet:
+              path: /info
+              port: 3000
+            initialDelaySeconds: 90
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /info
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/config
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "64m"
+            limits:
+              memory: "512Mi"
+              cpu: "256m"
+          env:
+            - name: ENV_SQL_CLIENT
+              value: "mysql"
+            - name: ENV_SQL_HOST
+              value: "13.67.44.182"
+            - name: ENV_IS_MAINTENANCE
+              valueFrom:
+                configMapKeyRef:
+                  name: test-config
+                  key: ENV_IS_MAINTENANCE
+            - name: ENV_IS_BLOWN_UP
+              valueFrom:
+                configMapKeyRef:
+                  name: test-config
+                  key: ENV_IS_BLOWN_UP
 
 <!-- endtab -->
 
@@ -291,90 +295,99 @@ Jika kita amati, implementasi **_"live-update"_** di atas hanya bisa bekerja unt
 apiVersion: v1
 kind: Service
 metadata:
-labels:
-test-app: test
-name: test
-namespace: default
+  labels:
+    test-app: test
+  name: test
+  namespace: default
 spec:
-externalTrafficPolicy: Cluster
-ports:
-
-- nodePort: 30321
-  port: 3000
-  protocol: TCP
-  targetPort: 3000
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30321
+    port: 3000
+    protocol: TCP
+    targetPort: 3000
   selector:
-  test-app: test
+    test-app: test
   sessionAffinity: None
   type: NodePort
-  status:
+status:
   loadBalancer: {}
-
 ---
-
 apiVersion: extensions/v1
 kind: Deployment
 metadata:
-name: test
+  name: test
 spec:
-revisionHistoryLimit: 2
-strategy:
-type: RollingUpdate
-replicas: 1
-selector:
-matchLabels:
-test-app: test
-template:
-metadata:
-labels:
-test-app: test
-spec:
-volumes: - name: config-volume
-configMap:
-name: test-config
-containers: - name: configmap-reload
-image: "jimmidyson/configmap-reload:v0.1"
-imagePullPolicy: "IfNotPresent"
-args: - --volume-dir=/etc/config - --webhook-url=http://localhost:3000/-/reload
-volumeMounts: - name: config-volume
-mountPath: /etc/config
-readOnly: true - name: test
-image: reyhan/docker-try-config:1.0.3
-command: ["npm", "start"]
-imagePullPolicy: Never
-livenessProbe:
-httpGet:
-path: /info
-port: 3000
-initialDelaySeconds: 90
-periodSeconds: 5
-readinessProbe:
-httpGet:
-path: /info
-port: 3000
-initialDelaySeconds: 5
-periodSeconds: 5
-ports: - containerPort: 3000
-volumeMounts: - name: config-volume
-mountPath: /etc/config
-resources:
-requests:
-memory: "256Mi"
-cpu: "64m"
-limits:
-memory: "512Mi"
-cpu: "256m"
-env: - name: ENV_SQL_CLIENT
-value: "mysql" - name: ENV_SQL_HOST
-value: "13.67.44.182" - name: ENV_IS_MAINTENANCE
-valueFrom:
-configMapKeyRef:
-name: test-config
-key: ENV_IS_MAINTENANCE - name: ENV_IS_BLOWN_UP
-valueFrom:
-configMapKeyRef:
-name: test-config
-key: ENV_IS_BLOWN_UP
+  revisionHistoryLimit: 2
+  strategy:
+    type: RollingUpdate
+  replicas: 1
+  selector:
+    matchLabels:
+      test-app: test
+  template:
+    metadata:
+      labels:
+        test-app: test
+    spec:
+      volumes:
+        - name: config-volume
+          configMap:
+            name: test-config
+      containers:
+        - name: configmap-reload
+          image: "jimmidyson/configmap-reload:v0.1"
+          imagePullPolicy: "IfNotPresent"
+          args:
+            - --volume-dir=/etc/config
+            - --webhook-url=http://localhost:3000/-/reload
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/config
+              readOnly: true
+        - name: test
+          image: reyhan/docker-try-config:1.0.3
+          command: ["npm", "start"]
+          imagePullPolicy: Never
+          livenessProbe:
+            httpGet:
+              path: /info
+              port: 3000
+            initialDelaySeconds: 90
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /info
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/config
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "64m"
+            limits:
+              memory: "512Mi"
+              cpu: "256m"
+          env:
+            - name: ENV_SQL_CLIENT
+              value: "mysql"
+            - name: ENV_SQL_HOST
+              value: "13.67.44.182"
+            - name: ENV_IS_MAINTENANCE
+              valueFrom:
+                configMapKeyRef:
+                  name: test-config
+                  key: ENV_IS_MAINTENANCE
+            - name: ENV_IS_BLOWN_UP
+              valueFrom:
+                configMapKeyRef:
+                  name: test-config
+                  key: ENV_IS_BLOWN_UP
 
 <!-- endtab -->
 
@@ -401,46 +414,46 @@ const mountPath = "/etc/config";
 const configMapFile = "..data";
 
 function readConfig() {
-const dir = fs.readdirSync(`${mountPath}/${configMapFile}`);
+  const dir = fs.readdirSync(`${mountPath}/${configMapFile}`);
 
-console.log(`Available envar: ${dir}`);
+  console.log(`Available envar: ${dir}`);
 
-dir.forEach(env => {
-process.env[env] = fs.readFileSync(
-`${mountPath}/${configMapFile}/${env}`
-);
-});
+  dir.forEach(env => {
+    process.env[env] = fs.readFileSync(
+      `${mountPath}/${configMapFile}/${env}`
+    );
+  });
 }
 
 app.get("/info", (req, res) => {
-res.sendStatus(200);
+  res.sendStatus(200);
 });
 
 app.use(bodyParser.json());
 
 // configmap reload webhook
 app.post("/-/reload", (req, res) => {
-// read new ConfigMap value
-readConfigMap();
+  // read new ConfigMap value
+  readConfig();
 
-console.log(`process.env AFTER: ${JSON.stringify(process.env)}`);
+  console.log(`process.env AFTER: ${JSON.stringify(process.env)}`);
 
-res.sendStatus(200);
+  res.sendStatus(200);
 });
 
 app.get("/isMaintenance", (req, res) => {
-const isMaintenace = process.env.ENV_IS_MAINTENANCE;
+  const isMaintenace = process.env.ENV_IS_MAINTENANCE;
 
-res.status(200).send(`Is it maintenance? ${isMaintenace}`);
+  res.status(200).send(`Is it maintenance? ${isMaintenace}`);
 })
 
 app.listen(3000, err => {
-if (err) {
-console.error(err);
-process.exit(1);
-}
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
 
-console.log(`Server is up on port 3000`);
+  console.log(`Server is up on port 3000`);
 });
 
 <!-- endtab -->
