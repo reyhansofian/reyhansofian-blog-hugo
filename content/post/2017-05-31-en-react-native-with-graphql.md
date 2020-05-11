@@ -1,6 +1,5 @@
 ---
 title: "React Native with GraphQL"
-thumbnailImagePosition: top
 thumbnailImage: //res.cloudinary.com/dweyilbvh/image/upload/v1496287727/react-apollo_tazzsm.png
 coverImage: //res.cloudinary.com/dweyilbvh/image/upload/v1496287727/react-apollo_tazzsm.png
 coverCaption: "https://cdn1.sysgears.com/images/blog/banners/apollo!-react-graphql-457c041c1c34868d9076f2433d761fad.png"

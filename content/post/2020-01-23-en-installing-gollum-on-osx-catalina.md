@@ -12,7 +12,6 @@ metaalignment: center
 tags:
   - osx
 thumbnailimage: http://www.eggplante.com/wp-content/uploads/2019/03/gollum-750x400.jpg
-thumbnailimageposition: top
 ---
 
 I’m working on a wiki page on Gitlab. In this particular case, I need to attach a file into the wiki. Which can’t be done using web editor on Gitlab. So I’m trying to edit it locally. In short, I need to pull the wiki and install Gollum on my laptop. Unfortunately, it didn’t go smoothly like a banana (?).

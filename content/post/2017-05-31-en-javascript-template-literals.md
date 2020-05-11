@@ -10,7 +10,6 @@ metaAlignment: center
 tags:
   - javascript
 thumbnailImage: //res.cloudinary.com/dweyilbvh/image/upload/c_scale,w_800/v1497584063/java-script_pqill1.jpg
-thumbnailImagePosition: top
 title: "Javascript's Template Literals"
 ---
 

@@ -9,7 +9,6 @@ metaAlignment: center
 tags:
   - vim
 thumbnailImage: //res.cloudinary.com/dweyilbvh/image/upload/c_scale,w_750/v1499823190/vim8_owyvqx.png
-thumbnailImagePosition: top
 title: Different Vim Settings for Each Project
 ---
 

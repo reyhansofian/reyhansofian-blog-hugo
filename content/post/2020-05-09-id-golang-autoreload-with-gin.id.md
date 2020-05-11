@@ -1,6 +1,5 @@
 ---
 title: "Live-reload dengan Gin untuk Develop Aplikasi Golang"
-thumbnailImagePosition: top
 thumbnailImage: https://i.imgur.com/UjsWOzU.gif
 coverImage: https://stackify.com/wp-content/uploads/2018/09/Learn-Go_-Tutorials-for-Beginners-Intermediate-and-Advanced-programmers-1280x720.jpg
 coverCaption: https://stackify.com/wp-content/uploads/2018/09/Learn-Go_-Tutorials-for-Beginners-Intermediate-and-Advanced-programmers-1280x720.jpg

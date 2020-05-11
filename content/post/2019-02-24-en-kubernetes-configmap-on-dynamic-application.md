@@ -1,7 +1,6 @@
 ---
 title: "Kubernetes ConfigMap on Dynamic Applications"
-thumbnailImagePosition: top
-thumbnailImage: https://i0.wp.com/www.lediligent.com/wp/wp-content/uploads/2019/03/Kubernetes-Logo.png?fit=750%2C400&ssl=1
+thumbnailImage: https://stackify.com/wp-content/uploads/2018/03/quick-guide-to-kubernetes-1-1280x720.png
 coverImage: https://stackify.com/wp-content/uploads/2018/03/quick-guide-to-kubernetes-1-1280x720.png
 coverCaption: https://stackify.com/wp-content/uploads/2018/03/quick-guide-to-kubernetes-1-1280x720.png
 metaAlignment: center

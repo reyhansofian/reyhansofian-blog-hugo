@@ -1,6 +1,5 @@
 ---
 title: "Bagaimana Transfer File dari OSX El Capitan ke Ubuntu 14.04"
-thumbnailImagePosition: top
 thumbnailImage: https://pacs.ou.edu/filer/sharing/1495831525/1027/
 coverImage: https://networkencyclopedia.com/wp-content/uploads/2019/08/ftam-file-transfer-access-management.jpg
 coverCaption: https://networkencyclopedia.com/file-transfer-access-and-management-ftam

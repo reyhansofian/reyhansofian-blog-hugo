@@ -1,9 +1,8 @@
 ---
 title: "How to Mock Gin-Gonic for JSON Response"
-thumbnailImagePosition: top
-thumbnailImage: //res.cloudinary.com/dweyilbvh/image/upload/
-coverImage: //res.cloudinary.com/dweyilbvh/image/upload/
-coverCaption: This is caption
+thumbnailImage: https://blog.bearer.sh/content/images/2020/03/node-retry-2.png
+coverImage: https://blog.bearer.sh/content/images/2020/03/node-retry-2.png
+coverCaption: https://blog.bearer.sh/content/images/2020/03/node-retry-2.png
 metaAlignment: center
 coverMeta: out
 date: 2020-05-10T22:44:31+07:00

@@ -1,7 +1,7 @@
 ---
 title: "Squash Multiple Git Commit Into One Commit"
-coverImage: https://www.hostinger.co.id/tutorial/wp-content/uploads/sites/11/2017/05/git-1.png
-coverCaption: https://www.hostinger.co.id/tutorial/cara-menggunakan-github-perintah-dasar-github
+coverImage: https://www.cmslive.co.uk/wp-content/uploads/2015/10/git-version-control.jpg
+coverCaption: https://www.cmslive.co.uk/wp-content/uploads/2015/10/git-version-control.jpg
 metaAlignment: center
 coverMeta: out
 date: 2018-04-18T22:20:30+07:00
@@ -10,7 +10,6 @@ categories:
 tags:
   - git
 thumbnailImage: https://www.cmslive.co.uk/wp-content/uploads/2015/10/git-version-control.jpg
-thumbnailimageposition: top
 description: "Squash multiple git commit as one commit for more readable commit"
 ---
 

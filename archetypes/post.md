@@ -1,6 +1,5 @@
 ---
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
-thumbnailImagePosition: top
 thumbnailImage: //res.cloudinary.com/dweyilbvh/image/upload/
 coverImage: //res.cloudinary.com/dweyilbvh/image/upload/
 coverCaption: This is caption

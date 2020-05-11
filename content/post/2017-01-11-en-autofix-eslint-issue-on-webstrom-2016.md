@@ -1,7 +1,6 @@
 ---
 title: "Autofix ESLint Issue on Webstrom 2016"
-thumbnailImagePosition: top
-thumbnailImage: https://boundingintocomics.com/files/2019/09/2019.09.18-05.47-boundingintocomics-5d826db3a30f6.png
+thumbnailImage: https://instazood.com/wp-content/uploads/2019/07/instagram_issue_sory_something_went_wrong-1050x550.jpg
 coverImage: https://instazood.com/wp-content/uploads/2019/07/instagram_issue_sory_something_went_wrong-1050x550.jpg
 coverCaption: https://instazood.com/blog/how-to-fix-instagram-issue-sorry-something-went-wrong/
 metaAlignment: center

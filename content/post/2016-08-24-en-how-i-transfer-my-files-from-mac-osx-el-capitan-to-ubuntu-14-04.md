@@ -1,9 +1,8 @@
 ---
 title: "How I Transfer My Files From Mac Osx El Capitan to Ubuntu 14 04"
-thumbnailImagePosition: top
 thumbnailImage: https://pacs.ou.edu/filer/sharing/1495831525/1027/
-coverImage: https://networkencyclopedia.com/wp-content/uploads/2019/08/ftam-file-transfer-access-management.jpg
-coverCaption: https://networkencyclopedia.com/file-transfer-access-and-management-ftam
+coverImage: https://pacs.ou.edu/filer/sharing/1495831525/1027/
+coverCaption: https://pacs.ou.edu/filer/sharing/1495831525/1027/
 metaAlignment: center
 coverMeta: out
 date: 2016-08-24T22:50:18+07:00
