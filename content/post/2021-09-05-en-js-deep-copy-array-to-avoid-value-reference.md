@@ -1,5 +1,5 @@
 ---
-title: "Deep Copy Array to Avoid Value Reference"
+title: "Deep Copy to Avoid Value Reference"
 date: 2021-09-05T18:24:58+07:00
 draft: true
 thumbnailImage: https://i.stack.imgur.com/AWKJa.jpg
