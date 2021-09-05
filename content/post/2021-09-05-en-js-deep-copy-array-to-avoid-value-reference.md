@@ -1,7 +1,6 @@
 ---
 title: "Deep Copy to Avoid Value Reference"
 date: 2021-09-05T18:24:58+07:00
-draft: true
 thumbnailImage: https://i.stack.imgur.com/AWKJa.jpg
 coverImage: https://blog.bearer.sh/content/images/2020/03/node-retry-2.png
 coverCaption: https://i.stack.imgur.com/AWKJa.jpg
