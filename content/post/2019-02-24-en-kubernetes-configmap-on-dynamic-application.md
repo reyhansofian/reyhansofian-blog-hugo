@@ -25,7 +25,7 @@ As per Kubernetes documentation, ConfigMap is a mechanism to separate configurat
 
 # How ConfigMap works?
 
-{{<image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/600/1*GoB8Po84hhM707uIi_xZVA.png" title="Image 1.1 — Create ConfigMap" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/600/1*GoB8Po84hhM707uIi_xZVA.png" title="Image 1.1 — Create ConfigMap" >}}
 
 There are 3 ways to create ConfigMap:
 
@@ -33,11 +33,11 @@ There are 3 ways to create ConfigMap:
 2. `--from-literal` flag. Example: `kubectl create configmap myConfigMap --from-literal KEY1=VALUE1 KEY2=VALUE2`
 3. With Kubernetes manifest with kind `ConfigMap`. We can create a file with `.yaml` or `.json`, and the we can apply it using `kubectl apply -f myConfigMap.yaml`
 
-{{<image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/600/1*KQjy0ceER44muI5_kZkdLA.png" title="Image 1.2 — Apply ConfigMap" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/600/1*KQjy0ceER44muI5_kZkdLA.png" title="Image 1.2 — Apply ConfigMap" >}}
 
 `kubectl create configmap` or `kubectl apply -f <file>` command will upload the ConfigMap definition to the Kubernetes Apiserver that lives inside Kubernetes cluster.
 
-{{<image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/600/1*bVutgbPL5mfpdhnMTzFiAQ.png" title="Image 1.3 — ConfigMap distribution by Apiserver" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/600/1*bVutgbPL5mfpdhnMTzFiAQ.png" title="Image 1.3 — ConfigMap distribution by Apiserver" >}}
 
 The Apiserver will distribute the ConfigMap definition to all Pods inside the cluster.
 
@@ -49,7 +49,7 @@ There are 2 ways to use ConfigMap
 
 As an example, we will create a ConfigMap like this
 
-{{<image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1000/1*UmIEX_zGQqrxNbTjdEyuGw.png" title="Image 2.1 - ConfigMap" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1000/1*UmIEX_zGQqrxNbTjdEyuGw.png" title="Image 2.1 - ConfigMap" >}}
 
 ***Descriptions:***
 
@@ -58,7 +58,7 @@ As an example, we will create a ConfigMap like this
 
 We will attach the ConfigMap values to a Pod and use it as environment variables
 
-{{<image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1000/1*zSVWgoFVokE6MRPYvp3-MQ.png" title="Image 2.2 - Pod Manifest" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1000/1*zSVWgoFVokE6MRPYvp3-MQ.png" title="Image 2.2 - Pod Manifest" >}}
 
 ***Descriptions:***
 
@@ -71,7 +71,7 @@ We will attach the ConfigMap values to a Pod and use it as environment variables
 
 ConfigMap also supports the Volume plugin. For instances, we will use the same ConfigMap manifest and we will create a Pod manifest like this
 
-{{<image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*q7EtLCY9rEhRH_on0ZZl1w.png" title="Image 2.3 - Pod manifest using Volume plugin" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*q7EtLCY9rEhRH_on0ZZl1w.png" title="Image 2.3 - Pod manifest using Volume plugin" >}}
 
 ***Descriptions:***
 
@@ -88,11 +88,11 @@ Why do we need ***"live-update"***? In the world of the container, the environme
 
 Let's examine the ConfigMap behavior if it got an update. Let's create a simple ConfigMap manifest like this
 
-{{<image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*jYIXmJHAv97m7XQZUWh-DQ.png" title="Image 3.1 - Simple ConfigMap" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*jYIXmJHAv97m7XQZUWh-DQ.png" title="Image 3.1 - Simple ConfigMap" >}}
 
 After applied it using `kubectl apply -f`, let's take a look inside the Pod's container how ConfigMap works as environment variables. We will go to the volume mount path directory based on the Pod configuration (in this case, it mounts to `/etc/config`)
 
-{{<image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*MiKDIUvl72yUvlIfUqs6KQ.png" title="Image 3.2 - ConfigMap inside a Pod's container" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*MiKDIUvl72yUvlIfUqs6KQ.png" title="Image 3.2 - ConfigMap inside a Pod's container" >}}
 
 If we look at the image above, every key that we define on ConfigMap will be mounted as files by Kubernetes. These files have symlinks to `...data` folder and inside that folder have the same names. For example Misal `ENV_IS_MAINTENANCE` symlinked to `..data/ENV_IS_MAINTENACE`, etc. Also `..data` folder symlinked to another folder called `..2019_02_22_04_00_47.246998214`.
 
@@ -265,13 +265,13 @@ spec:
 
 Next, let's update the ConfigMap value to
 
-{{<image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*H9gsRDvKQeydrJWp6QInBg.png" title="Image 3.3 - Change the \"ENV_IS_MAINTENTANCE\" key on ConfigMap" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*H9gsRDvKQeydrJWp6QInBg.png" title="Image 3.3 - Change the \"ENV_IS_MAINTENTANCE\" key on ConfigMap" >}}
 
-{{<image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*-chB0yixX6GdBfW3ZA0oDQ.png" title="Image 3.4 — Environment variables inside container has been modified" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*-chB0yixX6GdBfW3ZA0oDQ.png" title="Image 3.4 — Environment variables inside container has been modified" >}}
 
 From the image above, the symlinks between environment variables files didn't change at all. The only change is the symlink for `...data` changed to a new folder called `..2019_02_23_19_01_09.591362024`. For more clarity, take a look at the short gif below
 
-{{<image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/2000/1*0kLzHvwruLapTKbvgqaOKA.gif" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/2000/1*0kLzHvwruLapTKbvgqaOKA.gif" >}}
 
 As we can see, updating environment variables using this method is quite easy since we don't need to redeploy the Pod at all!
 
@@ -391,7 +391,7 @@ spec:
 
 {{< /tabbed-codeblock >}}
 
-{{<image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*b_xFQ5VYDIY54QKuzFE1Qw.png" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*b_xFQ5VYDIY54QKuzFE1Qw.png" >}}
 
 If we look closely at the container's configuration above, we add a new container from [jimmidyson/configmap-reload](https://github.com/jimmidyson/configmap-reload) with its configurations to read the ConfigMap. This method usually called **"sidecar container"**.
 
@@ -458,7 +458,7 @@ app.listen(3000, err => {
 
 On the NodeJS application, we need to add a new endpoint to receive the notification from the sidecar container (**"configmap-reload"** container).
 
-{{<image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*QKmTx-uhZQZ85gynZWDlrw.png" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*QKmTx-uhZQZ85gynZWDlrw.png" >}}
 
 With this method, the application flow will be like this
 

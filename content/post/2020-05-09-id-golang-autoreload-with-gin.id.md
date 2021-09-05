@@ -110,6 +110,6 @@ $ gin --appPort 8080 --port 5000 --immediate --notifications
 
 **Preview**
 
-{{< image classes="fancybox center clear fig-100" src="https://res.cloudinary.com/dweyilbvh/image/upload/v1588993429/Screen_Shot_2020-05-09_at_10.01.44_AM_qzligo.png" title="Build started" >}}
-{{< image classes="fancybox center clear fig-100" src="https://res.cloudinary.com/dweyilbvh/image/upload/v1588993429/Screen_Shot_2020-05-09_at_10.01.34_AM_w4i2c4.png" title="Build success" >}}
-{{< image classes="fancybox center clear fig-100" src="https://res.cloudinary.com/dweyilbvh/image/upload/v1588993700/Screen_Shot_2020-05-09_at_10.06.04_AM_t9yo1y.png" title="Build failed" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://res.cloudinary.com/dweyilbvh/image/upload/v1588993429/Screen_Shot_2020-05-09_at_10.01.44_AM_qzligo.png" title="Build started" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://res.cloudinary.com/dweyilbvh/image/upload/v1588993429/Screen_Shot_2020-05-09_at_10.01.34_AM_w4i2c4.png" title="Build success" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://res.cloudinary.com/dweyilbvh/image/upload/v1588993700/Screen_Shot_2020-05-09_at_10.06.04_AM_t9yo1y.png" title="Build failed" >}}

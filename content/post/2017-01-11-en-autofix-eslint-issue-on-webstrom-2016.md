@@ -24,11 +24,11 @@ However, Webstorm provides a plugin called File Watcher. This plugin will **“w
 
 1. Install a **File Watcher** plugin. You can find it on **Preferences** > **Plugins** > **Search for “File Watchers"**. Check it and click **Apply** button. You need to restart Webstorm afterward
 
-{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*-LJSlJ4NHxX2bpBoG5vF_g.png" title="Preferences > Plugins > Search for \"File Watchers\"" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*-LJSlJ4NHxX2bpBoG5vF_g.png" title="Preferences > Plugins > Search for \"File Watchers\"" >}}
 
 2. Go to **Preferences** > **Tools** > **File Watchers**. Create a new **File Watcher** by clicking the **+** button. Choose custom template
 
-{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*jnQ-CyXK3lrbOvIw96QL6Q.png" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*jnQ-CyXK3lrbOvIw96QL6Q.png" >}}
 
 3. Change the **File Type** to **Javascript**
 4. Adjust your **Scope** to your project directory or whatever folder you want to include
@@ -48,7 +48,7 @@ If you install ESLint globally (and/or use nvm), you can check ESLint path by ex
 7. Click on the **Watcher Settings** > **Other Options** to expand hidden options and add `$FileDir` to **Watcher Settings** > **Other Options** > **Working Directory**
 8. Uncheck the **Immediate file synchronization**
 
-{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*9kmjeSMC4leS8VkrYx65PQ.png" >}}
+{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*9kmjeSMC4leS8VkrYx65PQ.png" >}}
 
 > **_References:_** \
 > https://stackoverflow.com/questions/29221136/lint-only-on-save-intellij-webstorm \
