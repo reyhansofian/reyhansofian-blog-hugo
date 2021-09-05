@@ -26,11 +26,11 @@ Akhirnya saya mencoba menggunakan _plugin_ **File Watcher** tersebut supaya seca
 
 1. Install _plugin_ File Watcher. Kalian dapat menemukannya di menu **Preferences** > **Plugins** > **Search for “File Watchers"**. Centang pilihannya dan klik tombol **Apply**. Setelah itu kalian perlu restart Webstrom.
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*-LJSlJ4NHxX2bpBoG5vF_g.png" title="Preferences > Plugins > Search for \"File Watchers\"" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*-LJSlJ4NHxX2bpBoG5vF_g.png" title="Preferences > Plugins > Search for \"File Watchers\"" >}}
 
 2. Cari menu **Preferences** > **Tools** > **File Watchers**. Buat **File Watcher** baru dengan menekan tombol **+**. Lalu pilih **Custom Template**
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*jnQ-CyXK3lrbOvIw96QL6Q.png" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*jnQ-CyXK3lrbOvIw96QL6Q.png" >}}
 
 3. Ubah **File Type** menjadi **Javascript**
 4. Sesuaikan **Scope** kalian ke direktori projek kalian atau direktori apapun yang ingin kalian masukkan
@@ -50,7 +50,7 @@ Jika kalian install ESLint secara global (dengan/atau menggukan NVM), kalian dap
 7. Klik menu **Watcher Settings** > **Other Options** untuk melihat opsi tersembunyi dan tambahkan `$FileDir` ke **Watcher Settings** > **Other Options** > **Working Directory**
 8. Jangan centang menu **Immediate file synchronization**
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*9kmjeSMC4leS8VkrYx65PQ.png" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*9kmjeSMC4leS8VkrYx65PQ.png" >}}
 
 > **_Referensi:_** \
 > https://stackoverflow.com/questions/29221136/lint-only-on-save-intellij-webstorm \

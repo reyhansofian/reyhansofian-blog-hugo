@@ -133,18 +133,18 @@ samba-ad-dc start/running, process 22207
 - Bukan aplikasi **Finder**
 - Cari menu **Go** -> **Connect to Server** atau bisa dengan menggunakan shortcut **Cmd + K** (nanti akan muncul sebuah popup)
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/984/1*rPk3Ez8gjIyO5uTW1H14Ow.png" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/984/1*rPk3Ez8gjIyO5uTW1H14Ow.png" >}}
 
 - Masukkan alamat IP **smb://192.168.1.68** ke menu **Server Address**. Alamat IP-nya tergantung dari `ifconfig` kalian di Macbook ya. Caranya mirip dengan menggunakan di Ubuntu di atas. Setelah itu tekan tombol **Connect**.
 - Sebuah popup akan muncul (lagi)
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/836/1*pVXiaBRWBPXWcD9B5sJQ_A.png" title="Volume Ubuntuk 14.04 berwarna abu-abu karena aku sudah memasangnya (mount)" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/836/1*pVXiaBRWBPXWcD9B5sJQ_A.png" title="Volume Ubuntuk 14.04 berwarna abu-abu karena aku sudah memasangnya (mount)" >}}
 
 - NOTE: Volume Ubuntuk 14.04 berwarna abu-abu karena aku sudah memasangnya (mount)
 - Pilih volume yang diinginkan, lalu tekan tombol **OK**
 - Volume pilihan kalian akan muncul di daftar **Devices**
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*J-QUtQBEylJLUSo9xBzU8Q.png" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*J-QUtQBEylJLUSo9xBzU8Q.png" >}}
 
 - Sekarang buka terminal kalian
 - Kita akan menggunakan `rsync` untuk menyalin (copy) semua file yang ada di Macbok ke Ubuntu. Caranya dengan menjalankan perintah

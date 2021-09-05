@@ -131,18 +131,18 @@ samba-ad-dc start/running, process 22207
 - Go to your Finder
 - Find **Go** -> **Connect to Server** or by press **Cmd + K** and a popup will appear
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/984/1*rPk3Ez8gjIyO5uTW1H14Ow.png" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/984/1*rPk3Ez8gjIyO5uTW1H14Ow.png" >}}
 
 - Enter **smb://192.168.1.68** on the Server Address bar. The IP address depends on your `ifconfig` results. Then press **Connect** button.
 - A popup will appear (again)
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/836/1*pVXiaBRWBPXWcD9B5sJQ_A.png" title="The Ubuntu 14.04 volume is greyed out because I already mount it" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/836/1*pVXiaBRWBPXWcD9B5sJQ_A.png" title="The Ubuntu 14.04 volume is greyed out because I already mount it" >}}
 
 - The Ubuntu 14.04 volume is greyed out because I already mount it
 - Select the desired volume, and press **OK**
 - Your selected volume will appear on the **Devices** list
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*J-QUtQBEylJLUSo9xBzU8Q.png" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*J-QUtQBEylJLUSo9xBzU8Q.png" >}}
 
 - Now open up your terminal
 - We will use rsync to copy our files from MBA to Ubuntu

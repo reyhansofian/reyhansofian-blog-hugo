@@ -26,7 +26,7 @@ ConfigMap cocok digunakan untuk menyimpan konfigurasi yang tidak sensitif atau k
 
 # Bagaimana Cara Kerja ConfigMap?
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/600/1*GoB8Po84hhM707uIi_xZVA.png" title="Gambar 1.1 — Membuat ConfigMap" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/600/1*GoB8Po84hhM707uIi_xZVA.png" title="Gambar 1.1 — Membuat ConfigMap" >}}
 
 Pada Gambar 1.1 kita membuat ConfigMap terlebih dahulu. Ada 3 cara untuk membuat ConfigMap:
 
@@ -37,11 +37,11 @@ Pada Gambar 1.1 kita membuat ConfigMap terlebih dahulu. Ada 3 cara untuk membuat
 3. Menggunakan manifest dengan tipe ConfigMap (lihat gambar 2.1).
    Untuk menggunakan cara ini kita perlu membuat sebuah file dengan ekstensi .yaml dan sesuai dengan spesifikasi, lalu mengunggah file tersebut dengan perintah `kubectl apply -f myConfigMap.yaml`
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/600/1*KQjy0ceER44muI5_kZkdLA.png" title="Gambar 1.2 — Unggah ConfigMap" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/600/1*KQjy0ceER44muI5_kZkdLA.png" title="Gambar 1.2 — Unggah ConfigMap" >}}
 
 Perintah `kubectl create configmap` maupun `kubectl apply -f <file>` akan mengunggah ConfigMap tersebut ke Apiserver Kubernetes yang ada di dalam cluster Kubernetes.
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/600/1*bVutgbPL5mfpdhnMTzFiAQ.png" title="Gambar 1.2 — Apiserver mendistribusikan ConfigMap" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/600/1*bVutgbPL5mfpdhnMTzFiAQ.png" title="Gambar 1.2 — Apiserver mendistribusikan ConfigMap" >}}
 
 Lalu apiserver akan mendistribusikan ConfigMap tersebut ke semua Pod yang membutuhkan yang berada di dalam cluster Kubernetes.
 
@@ -53,7 +53,7 @@ Ada 2 cara untuk menggunakan ConfigMap:
 
 Sebagai contoh, kita memiliki sebuah ConfigMap seperti berikut
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1000/1*UmIEX_zGQqrxNbTjdEyuGw.png" title="Gambar 2.1 - ConfigMap" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1000/1*UmIEX_zGQqrxNbTjdEyuGw.png" title="Gambar 2.1 - ConfigMap" >}}
 
 **_Penjelasan nomor pada gambar:_**
 
@@ -62,7 +62,7 @@ Sebagai contoh, kita memiliki sebuah ConfigMap seperti berikut
 
 Lalu kita gunakan nilai dari ConfigMap **"special-config"** (dari key **"metadata.name"**) tersebut ke sebuah Pod dengan menggunakan env seperti berikut
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1000/1*zSVWgoFVokE6MRPYvp3-MQ.png" title="Gambar 2.2 - Konfigurasi Pod" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1000/1*zSVWgoFVokE6MRPYvp3-MQ.png" title="Gambar 2.2 - Konfigurasi Pod" >}}
 
 **_Penjelasan nomor pada gambar:_**
 
@@ -75,7 +75,7 @@ Lalu kita gunakan nilai dari ConfigMap **"special-config"** (dari key **"metadat
 
 ConfigMap juga dapat digunakan dengan menggunakan plugin volume. Kita ambil contoh dengan menggunakan konfigurasi ConfigMap yang sama dengan di atas (gambar 2.1). Kita buat konfigurasi Pod seperti berikut:
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*q7EtLCY9rEhRH_on0ZZl1w.png" title="Gambar 2.3 - Konfigurasi Pod menggunakan plugin volume" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*q7EtLCY9rEhRH_on0ZZl1w.png" title="Gambar 2.3 - Konfigurasi Pod menggunakan plugin volume" >}}
 
 **_Penjelasan nomor pada gambar:_**
 
@@ -92,9 +92,9 @@ Kenapa **_"live-update"_** dibutuhkan? Karena di dalam dunia kontainerisasi, jik
 
 Sebelum kita mulai, mari kita lihat apa yang terjadi jika ConfigMap berubah dengan contoh konfigurasi ConfigMap seperti berikut
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*jYIXmJHAv97m7XQZUWh-DQ.png" title="Gambar 3.1 - Konfigurasi ConfigMap" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*jYIXmJHAv97m7XQZUWh-DQ.png" title="Gambar 3.1 - Konfigurasi ConfigMap" >}}
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*MiKDIUvl72yUvlIfUqs6KQ.png" title="Gambar 3.2 - ConfigMap di dalam sebuah container sebelum berubah" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*MiKDIUvl72yUvlIfUqs6KQ.png" title="Gambar 3.2 - ConfigMap di dalam sebuah container sebelum berubah" >}}
 
 Jika kita perhatikan, setiap variabel yang kita definisikan di dalam ConfigMap akan menjadi sebuah file di dalam kontainer yang ada di dalam setiap Pod. File-file ini memiliki tautan (**_symlink_**) ke dalam sebuah folder `..data` dengan nama file yang sama. Misal `ENV_IS_MAINTENANCE` memiliki tautan ke file `..data/ENV_IS_MAINTENACE`, dst. Dan folder `..data` mengarah kepada sebuah folder yang memiliki nama `..2019_02_22_04_00_47.246998214`.
 
@@ -266,13 +266,13 @@ spec:
 
 Selanjutnya mari kita ubah konfigurasi ConfigMap di atas menjadi
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*H9gsRDvKQeydrJWp6QInBg.png" title="Gambar 3.3 — Perubahan konfigurasi ConfigMap pada key \"ENV_IS_MAINTENTANCE\"" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*H9gsRDvKQeydrJWp6QInBg.png" title="Gambar 3.3 — Perubahan konfigurasi ConfigMap pada key \"ENV_IS_MAINTENTANCE\"" >}}
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*-chB0yixX6GdBfW3ZA0oDQ.png" title="Gambar 3.4 — ConfigMap di dalam sebuah container setelah berubah" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*-chB0yixX6GdBfW3ZA0oDQ.png" title="Gambar 3.4 — ConfigMap di dalam sebuah container setelah berubah" >}}
 
 Dari gambar di atas dapat kita lihat bahwa tautan antara file-file variabel lingkungan tidak berubah sama sekali. Hanya tautan folder ..data yang berubah tautannya menuju folder baru yang namanya `..2019_02_23_19_01_09.591362024`.
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/2000/1*0kLzHvwruLapTKbvgqaOKA.gif" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/2000/1*0kLzHvwruLapTKbvgqaOKA.gif" >}}
 
 Dari animasi di atas dapat kita lihat bagaimana mudahnya mengubah variabel lingkungan tanpa harus mengubah konfigurasi Deployment, Service, atau Pod sama sekali bahkan tanpa harus restart aplikasi tersebut.
 
@@ -394,7 +394,7 @@ spec:
 
 Mari kita perhatikan konfigurasi containers di atas
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*b_xFQ5VYDIY54QKuzFE1Qw.png" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*b_xFQ5VYDIY54QKuzFE1Qw.png" >}}
 
 Jika kita perhatikan lagi, kita menambahkan kontainer [jimmidyson/configmap-reload](https://github.com/jimmidyson/configmap-reload) dengan beberapa konfigurasinya ke dalam Pod untuk membaca perubahan ConfigMap.
 
@@ -461,7 +461,7 @@ app.listen(3000, err => {
 
 Untuk kode server kita menambahkan satu endpoint supaya bisa menerima webhook dari kontainer **"configmap-reload"**.
 
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*QKmTx-uhZQZ85gynZWDlrw.png" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/1400/1*QKmTx-uhZQZ85gynZWDlrw.png" >}}
 
 Jika kita menggunakan metode seperti ini, maka alur kerjanya akan menjadi seperti berikut
 

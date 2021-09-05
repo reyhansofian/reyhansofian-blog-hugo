@@ -19,7 +19,7 @@ I’m working on a wiki page on Gitlab. In this particular case, I need to attac
 <!--more-->
 
 The worst part is this
-{{< figure classes="fancybox center clear fig-100" src="https://miro.medium.com/max/2000/1*R5mLq4A8VptfTlbIEhSL7g.png" title="Installation failed due to missing header" >}}
+{{< image classes="fancybox center clear fig-100" src="https://miro.medium.com/max/2000/1*R5mLq4A8VptfTlbIEhSL7g.png" title="Installation failed due to missing header" >}}
 
 After some research, this error caused by missing C headers on my OS. In OSX 10.15 (Catalina), the Xcode path is renewed. And also apparently Apple stopped shipping (some of) the C header files for Ruby and split them in a separate package. Looking for answers, I’m trying a couple of methods:
 
