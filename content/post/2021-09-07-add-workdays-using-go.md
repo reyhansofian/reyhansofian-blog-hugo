@@ -11,7 +11,7 @@ categories:
 tags:
 - golang
 - datetime
-description: ""
+description: "Add working days using Golang to avoid working on the weekend"
 ---
 
 Go [time package](https://pkg.go.dev/time) has extensive support for manipulating times and durations. For example, we can use the time package to find the next business days. Let's create a small case for this.
