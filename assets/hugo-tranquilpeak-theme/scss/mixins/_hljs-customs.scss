@@ -1,0 +1,111 @@
+// Highlight.js custom theme
+// Follow guidelines
+// 1. Uncomment the block just below - remove `/*` and `*/`
+// 2. Fill `background`, `color`, `border-right-color` properties
+// with properties of `.hljs` CSS class of your theme
+// 3. Put your theme where it's indicated just below
+// 4. Remove `.hljs {...}` rules
+// 5. Remove `hljs-` of all CSS class name. E.g : `.hljs-comment` becomes `.comment`
+// 6. Comment line 61 (`'themes/tranquilpeak',`) of `source/_css/tranquilpeak.scss` file
+// 7. Run `grunt buildProd` to build the theme and see the result
+// Default code block
+pre > code {
+    background: #282a36;
+    color: #8be9fd;
+}
+
+// Default inline code
+code {
+    background-color: #282a36;
+    color: #8be9fd;
+}
+
+// Tabbed code block tab
+// If your theme is dark then use a lighter background
+// to see clearly which tab is active
+.codeblock--tabbed figcaption .tab.active {
+    background: #282a36;
+    color: #8be9fd;
+}
+
+// highlight code block
+figure.highlight,
+.codeblock {
+    background: #282a36;
+    color: #8be9fd;
+
+    figcaption {
+        background: #282a36;
+        color: #8be9fd;
+    }
+    .gutter {
+        background: #282a36;
+        border-right-color: #8be9fd;
+        .line {
+            color: #8be9fd;
+        }
+    }
+    // Dracula theme: https://github.com/dracula/highlightjs/blob/master/dracula.css
+    .built_in,
+    .selector-tag,
+    .section,
+    .link {
+      color: #8be9fd;
+    }
+    
+    .keyword {
+      color: #ff79c6;
+    }
+    
+    .hljs,
+    .subst {
+      color: #f8f8f2;
+    }
+    
+    .title,
+    .attr,
+    .meta-keyword {
+      font-style: italic;
+      color: #50fa7b;
+    }
+    
+    .string,
+    .meta,
+    .name,
+    .type,
+    .symbol,
+    .bullet,
+    .addition,
+    .variable,
+    .template-tag,
+    .template-variable {
+      color: #f1fa8c;
+    }
+    
+    .comment,
+    .quote,
+    .deletion {
+      color: #6272a4;
+    }
+    
+    .keyword,
+    .selector-tag,
+    .literal,
+    .title,
+    .section,
+    .doctag,
+    .type,
+    .name,
+    .strong {
+      font-weight: bold;
+    }
+    
+    .literal,
+    .number {
+      color: #bd93f9;
+    }
+    
+    .emphasis {
+      font-style: italic;
+    }
+}
