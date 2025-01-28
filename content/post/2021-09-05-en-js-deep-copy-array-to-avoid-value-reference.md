@@ -1,9 +1,9 @@
 ---
 title: "Deep Copy to Avoid Value Reference"
 date: 2021-09-05T18:24:58+07:00
-thumbnailImage: https://i.stack.imgur.com/AWKJa.jpg
-coverImage: https://blog.bearer.sh/content/images/2020/03/node-retry-2.png
-coverCaption: https://i.stack.imgur.com/AWKJa.jpg
+thumbnailImage: https://res.cloudinary.com/dweyilbvh/image/upload/v1738084764/dn3dzbdm0wtfaer2dibu.png
+coverImage: https://res.cloudinary.com/dweyilbvh/image/upload/v1738085738/njck8bxrjjckwpryjkok.webp
+coverCaption: Unsplash image by patrickl
 metaAlignment: center
 coverMeta: out
 categories:
@@ -16,10 +16,11 @@ description: "Deep copy an array to avoid its value reference from source object
 ---
 
 Playing around application states in ReactJS or VueJS is quite fun. But it's not fun anymore if we (accidentally) mutate the state while doing a search from the state.
+<!--more-->
 
 It happens to me when I'm trying to find a sidebar ID from the store of the sidebar tree. Yes, a tree.  Imagine the store if we have a sidebar tree like this
 
-{{< image classes="fancybox center clear fig-100" src="https://i.stack.imgur.com/KOt6l.png" title="Sidebar tree example" >}}
+{{< image classes="fancybox center clear fig-100" src="https://codehim.com/wp-content/uploads/2019/03/tree-navigation-with-jquery-1.jpg" title="Sidebar tree example (courtesy: CodeHim)" >}}
 
 and we need to find out the ID of `file2.xml`. Our best approach here is to apply a DFS ([Depth-First Search](https://en.wikipedia.org/wiki/Depth-first_search)) without re-render the sidebar. And here's my first approach to DFS
 

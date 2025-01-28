@@ -1,0 +1,66 @@
+{{/* Initialize Scratch variables first */}}
+{{ $_hugo_config := .Page.Scratch }}
+{{ $_hugo_config.Set "tc-languages" slice }}
+{{ $_hugo_config.Set "tc-content" slice }}
+{{ $_hugo_config.Set "tc-title" "" }}
+{{ $_hugo_config.Set "tc-url" "" }}
+
+{{ $tabs := findRE "<!-- *[Tt][Aa][Bb] +(\\w*) *-->\\n([\\w\\W\\s\\S]*?)<!-- *[Ee][Nn][Dd][Tt][Aa][Bb] *-->" .Inner }}
+{{ range $index,$value := $tabs }}
+  {{ $language := replaceRE "<!-- *[Tt][Aa][Bb] +(\\w*) *-->" "$1" (index (findRE "<!-- *[Tt][Aa][Bb] +(\\w*) *-->" .) 0) }}
+  {{ $language = lower $language }}
+  {{ $content := replaceRE "<!-- *[Tt][Aa][Bb] +(\\w*) *-->\\n([\\w\\W\\s\\S]*?)<!-- *[Ee][Nn][Dd][Tt][Aa][Bb] *-->" "$2" . }}
+  {{ $_hugo_config.Add "tc-languages" $language }}
+  {{ $_hugo_config.Add "tc-content" $content }}
+{{ end }}
+
+{{ if .IsNamedParams }}
+  {{ $_hugo_config.Set "tc-title" (.Get "title") }}
+  {{ $_hugo_config.Set "tc-url" (.Get "url") }}
+{{ else }}
+  {{ if ge (len .Params) 1 }}
+    {{ $_hugo_config.Set "tc-title" (.Get 0) }}
+  {{ end }}
+  {{ if eq (len .Params) 2 }}
+    {{ $_hugo_config.Set "tc-url" (.Get 1) }}
+  {{ end }}
+{{ end }}
+
+{{ $tc_url := $_hugo_config.Get "tc-url" }}
+{{ $tc_title := $_hugo_config.Get "tc-title" }}
+{{ $tc_languages := $_hugo_config.Get "tc-languages" }}
+{{ $tc_content := $_hugo_config.Get "tc-content" }}
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    {{ if and $tc_url $tc_title }}
+      <span><a href="{{ $tc_url | safeURL }}">{{ $tc_title }}</a></span>
+    {{ else if $tc_title }}
+      <span>{{ $tc_title }}</span>
+    {{ end }}
+    <ul class="tabs">
+      {{ range $index, $value := $tc_languages }}
+        <li class="tab {{ if eq $index 0 }}active{{ end }}">{{ . }}</li>
+      {{ end }}
+    </ul>
+  </figcaption> 
+  <div class="tabs-content">
+    {{ range $index, $value := $tc_content }}
+      {{ $trimmedContent := trim $value "\n" }}
+      <figure class="highlight language-{{ index $tc_languages $index }}" style="display: {{ if eq $index 0 }}block{{ else }}none{{ end }};">   
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre>{{ range $lineIndex,$line := (split $trimmedContent "\n") }}<span>{{ add $lineIndex 1 }}</span><br>{{ end }}</pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-{{ index $tc_languages $index }}"><code class="{{ index $tc_languages $index }}">{{ $trimmedContent }}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    {{ end }}
+  </div>
+</figure>

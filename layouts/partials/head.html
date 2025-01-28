@@ -9,17 +9,16 @@
 {{- else -}}
   {{- .Scratch.Set "sidebarBehavior" .Site.Params.sidebarBehavior -}}
 {{- end -}}
-<!-- Fix hugo 0.17 expects ".Site.Author.gravatarEmail" whereas hugo 0.18 expects ".Site.Author.gravataremail" -->
-{{- if .Site.Author.gravatarEmail -}}
-  {{- .Scratch.Set "gravatarEmail" .Site.Author.gravatarEmail -}}
+{{- if .Site.Params.Author.gravatarEmail -}}
+  {{- .Scratch.Set "gravatarEmail" .Site.Params.Author.gravatarEmail -}}
 {{- end -}}
-{{- if .Site.Author.gravataremail -}}
-  {{- .Scratch.Set "gravatarEmail" .Site.Author.gravataremail -}}
+{{- if .Site.Params.Author.gravataremail -}}
+  {{- .Scratch.Set "gravatarEmail" .Site.Params.Author.gravataremail -}}
 {{- end -}}
 {{- if .Scratch.Get "gravatarEmail" -}}
   {{- .Scratch.Set "authorPicture" (printf "https://www.gravatar.com/avatar/%s" (urlize (md5 (.Scratch.Get "gravatarEmail")))) -}}
-{{- else if .Site.Author.picture -}}
-  {{- .Scratch.Set "authorPicture" (absURL .Site.Author.picture) -}}
+{{- else if .Site.Params.Author.picture -}}
+  {{- .Scratch.Set "authorPicture" (absURL .Site.Params.Author.picture) -}}
 {{- end -}}
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
@@ -33,14 +32,14 @@
       <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ .RelPermalink }}">
     {{ end }}
 
-    {{ with .Site.Author.googleplus }}
+    {{ with .Site.Params.Author.googleplus }}
       <link rel="publisher" href="https://plus.google.com/{{ . | urlize }}">
     {{ end }}
 
     <link rel="canonical" href="{{ .Permalink }}">
 
     <!--EXTERNAL STYLES-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css" integrity="sha256-YjcCvXkdRVOucibC9I4mBS41lXPrWfqY2BnpskhZPnw=" crossorigin="anonymous" />
@@ -60,10 +59,26 @@
       {{ end }}
     {{ end }}
 
-    {{ if .Params.ga.async }}
-      {{ template "_internal/google_analytics_async.html" . }}
-    {{ else }}
+    {{ if hugo.IsProduction }}
       {{ template "_internal/google_analytics.html" . }}
     {{ end }}
     {{ partial "head_end.html" . }}
+
+    {{ with resources.Get "assets/compat.js" }}
+      {{ $opts := dict
+        "minify" hugo.IsProduction
+        "sourceMap" (cond hugo.IsProduction "" "external")
+        "targetPath" "js/main.js"
+      }}
+
+      {{ with . | js.Build $opts }}
+        {{ if hugo.IsProduction }}
+          {{ with . | fingerprint }}
+            <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+          {{ end }}
+        {{ else }}
+          <script src="{{ .RelPermalink }}"></script>
+        {{ end }}
+      {{ end }}
+    {{ end }}
   </head>
